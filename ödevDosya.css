@@ -1,0 +1,62 @@
+/*****************************************************
+Erzurum Teknik Üniversitesi Bilgisayar Mühendisliği Bil-304
+Elif ÖKSÜZALİ
+20 Mart 2021
+*****************************************************/
+
+body{
+	font-family: 'Ubuntu', sans-serif;	
+	min-height:100vh;transition:all .4s ease;
+	overflow-x:hidden;
+	position:relative;
+	background:url(../img/bg-logo.png) center 200px no-repeat;
+	background-size:contain;
+	background-attachment:fixed;
+	background-color:rgba(0,0,0,0.2);
+}
+
+p {text-align: justify;} /*Yazıyı iki yana yaslar*/
+
+main{margin-right:300px}
+
+.sagMenuLogo{
+	vertical-align: middle;
+	/*border-style: none; --> yazmasakda olur*/
+	text-align: center;
+}
+
+/*Tüm div innözellikleri*/
+
+.sagMenuNav {
+	height:100vh; /*Sag menü %100 yükseklikte olsun demek*/
+	width:250px; /*Sag menü genişlik*/
+	position:fixed; /*Sag menü açıldığında sabit kalsın*/
+	top:0; /*üstten sıfırla*/
+	Right:0; /*Sagdan sıfırla*/
+	padding-top:60px; /*üstten iç boşluk*/
+	background-color:purple; /*mavi*/
+	z-index:999; /*her zaman body üstünde olsun*/
+	transition:0.5s; /*animasyonlu açılsın*/
+	overflow-x:hidden; /*taşma olursa gizle*/
+}
+h2{text-align: center;} 
+
+.sagMenuNav a {
+	display:block; /*alt alta çıksın*/
+	text-decoration:none; /*alt çizgi olmasın*/
+	font-size:18px;
+	color:#FFFFFF;
+	padding:8px 8px 8px 35px;
+	transition:0.3s; /*animasyonlu açılsın*/
+}
+
+.sagMenuNav a:hover {color:#111;} /*link üzerine mouse ile gelince siyah yapsın*/
+
+.sagMenuNav .btnKapat {
+	position:absolute;
+	top:0;
+	right:20px;
+	font-size:32px;
+}
+
+.acMenu {font-size:28px;}
