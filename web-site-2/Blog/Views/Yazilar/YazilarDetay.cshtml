@@ -1,0 +1,11 @@
+﻿@model Blog.Models.Yazilar
+
+<div class="post mt-3">
+    <h5 class="display-5">@Model.Baslik</h5>
+    <img class="foto" src="@Model.KucukResimYolu" />  
+    <p>@Html.Raw(Model.Icerik)</p>
+    <p>
+        <span class="badge bg-primary text-white">@Model.Kategori.KategoriAdi</span>
+        <span class="badge bg-danger text-white">@Model.EklemeTarihi.ToString("dd MMMM yyyy")</span>
+    </p>
+</div>

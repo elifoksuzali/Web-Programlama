@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\HataYonetimi\" />
+    <Folder Include="wwwroot\Content\Script\js\plugins\fileinput\fileinput\" />
+    <Folder Include="wwwroot\Uploads\Dosyalar\" />
+    <Folder Include="wwwroot\Uploads\GaleriResimleri\" />
+    <Folder Include="wwwroot\Uploads\GaleriVideolari\" />
+    <Folder Include="wwwroot\Uploads\IcerikResimleri\" />
+    <Folder Include="wwwroot\Uploads\KadroYonetimi\" />
+    <Folder Include="wwwroot\Uploads\ProjeResimleri\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+</Project>

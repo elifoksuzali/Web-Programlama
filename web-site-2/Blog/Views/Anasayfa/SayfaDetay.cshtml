@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "SayfaDetay";
+    var birustsayfaBaslik = ViewBag.UstSayfa;
+    var sayfaBaslik = ViewBag.Sayfa;
+    var icerik = ViewBag.Icerik;
+}
+
+
+<div class="space_10"> </div>
+<div class="col-md-1">   </div>
+<div class="col-md-11">
+    <ul class="breadcrumb pull-left">
+        <li class="home breadcrumb-item"><i class="fa fa-home"></i> <a href="/Anasayfa/Anasayfa">Anasayfa</a></li>
+        <li class="breadcrumb-item">
+            <a href="#">
+                @if (birustsayfaBaslik != null)
+                {@birustsayfaBaslik}
+            </a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="#">
+                @if (sayfaBaslik != null)
+                {@sayfaBaslik}
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<div id="blog_post" class="page">
+    <div class="container">
+        <div class="row">
+            <div class="posts col-md-12">
+                <h1 class="block_title">
+                    @if (sayfaBaslik != null)
+                    {@sayfaBaslik}
+                else { }
+                </h1>
+                <div class="post">
+
+                    <div class="details">
+
+                        <div class="summary">
+                            @*<iframe width="660" height="315" src="" frameborder="0" allowfullscreen></iframe>*@
+                            <img style="width: 100%;vertical-align: middle;border-style: none;max-width: 100%;" src="@if (icerik != null)
+                        {
+                            @icerik.KucukResimYolu
+                        }" />
+                        </div>
+                        <p></p><p>
+                            @if (icerik != null)
+                            {
+                                @Html.Raw(icerik.IcerikAciklama)
+                            }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*<div class="post mt-3">
+        <h5 class="display-5">Bootstrap Menü</h5>
+
+        <p>
+            &nbsp &nbsp Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <Br>
+        <p>
+            &nbsp &nbsp Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <Br>
+        <p>
+            &nbsp &nbsp Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <Br>
+        <p>
+            &nbsp &nbsp Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <Br>
+        <p>
+            &nbsp &nbsp Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <Br>
+        <p>
+            <span class="badge bg-primary text-white">C#</span>
+            <span class="badge bg-danger text-white">25.03.2021</span>
+        </p>
+    </div>*@

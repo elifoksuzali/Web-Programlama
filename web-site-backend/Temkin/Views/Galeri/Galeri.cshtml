@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Temkin.Models.GaleriResimler>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- galeri -->
+<section class="galeri_resim" id="galeri_resim">
+    <h1>Galeri</h1><Br><br>
+    <p>
+        Yaptığımız tüm etkinlikleri inceleyerek bizleri daha da yakından tanıyın
+    </p><br><Br><br>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div id="deneme7" class="galeri_resim-col">
+                <img class="img-zoom" src=" @item.ResimYolu" alt="" />
+                <div class="layer">
+                    <h3>@item.Aciklama</h3>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!--- galeri son-->

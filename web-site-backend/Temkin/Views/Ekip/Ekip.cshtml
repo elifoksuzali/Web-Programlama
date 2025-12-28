@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Temkin.Models.EkipDetay>
+@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="team" id="team">
+    <div class="container">
+        <h2 class="text-center">
+            Bizleri Tanıyın
+        </h2>
+
+        <div class="row">
+            @foreach (var k in Model)
+            {
+                <div class="col-sm-3 col-xs-6">
+                    <div class="card card-block">
+                        <a href="#">
+
+                            <img alt="" class="team-img" src="@k.EkipResimYolu" />
+                            <div class="card-title-wrap">
+                                <span class="card-title">@k.Ad @k.Soyad</span> <span class="card-text">Üstat</span>
+                            </div>
+
+                            <div class="team-over">
+                                <h4 class="hidden-md-down">
+                                    İletişim Kurun
+                                </h4>
+
+                                <nav class="social-nav">
+                                    <a href="@k.Twitter"  target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a href="@k.Facebook"  target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="@k.Linkedln"  target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="@k.Email"  target="_blank"><i class="fa fa-envelope"></i></a>
+                                </nav>
+
+                                <p>
+                                   @k.Icerik
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            }
+            </div>
+
+    </div>
+</section>
+<!-- /Team -->

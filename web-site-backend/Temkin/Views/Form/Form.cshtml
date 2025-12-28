@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Form başlangıç -->
+<section class="form" id="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="section-title">İletişim Kurun</h2>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4">
+                <div class="form-info">
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p>Yomra-Merkez<br>TRABZON</p>  
+                    </div>
+
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p>temkin@temkin.org.tr</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <a href="tel://+905532559761">+905532559761</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-8">
+                <div class="formm">
+                    <div id="sendmessage"></div>
+                    <div id="errormessage"></div>
+                    <form action="https://formspree.io/f/mayaodvj" method="post" role="form" class="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Ad-Soyad" data-rule="minlen:4" data-msg="Lütfen 4 karakterden fazla giriniz" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Lütfen geçerli bir eposta adresi giriniz" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Konu" data-rule="minlen:4" data-msg="Lütfen 8 karakterden fazla giriniz" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Lütfen bizim için bir şeyler yaz" placeholder="Öneri"></textarea>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="text-center"><button type="submit" onclick="uyari()" value="Uyarı">
+                              Gönder</button></div>
+                                                 
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--Form bitiş -->

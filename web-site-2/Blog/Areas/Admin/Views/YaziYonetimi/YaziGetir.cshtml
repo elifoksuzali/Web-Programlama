@@ -1,0 +1,91 @@
+﻿@model Blog.Models.Yazilar
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var kategori = ViewBag.Kategoriler;
+}
+
+
+
+
+
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/bootstrap/bootstrap-file-input.js"></script>
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/summernote/summernote.js"></script>
+
+
+<!-- RENDER -->
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("YaziDuzenle", "YaziYonetimi", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+            <div class="form-horizontal">
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Yazı</strong> Duzenle / <a style="color:red;" href="/Admin/YaziYonetimi/YaziListele">Geri</a></h3>
+                        <ul class="panel-controls">
+                            <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="panel-body">
+                        @Html.HiddenFor(Model => Model.Id);
+                        @Html.HiddenFor(Model => Model.KucukResimYolu);
+                        @Html.HiddenFor(Model => Model.Language);
+                        @Html.HiddenFor(Model => Model.KisaMetin);
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Kategori Seçimi</label>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class=""></span></span>
+                                    @Html.DropDownListFor(model => model.KategoriID, new SelectList(kategori, "Id", "KategoriAdi"))
+                                </div>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Yazı Başlığı</label>
+                            <div class="col-md-6 col-md-3">
+                                <input type="text" class="form-control" name="Baslik" value="@Model.Baslik">
+                                @*<textarea class="ckeditor" rows="10" name="KategoriAdi"></textarea>*@
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Yazı İçeriği</label>
+                            <div class="col-md-6 col-xs-12">
+
+                                <textarea class="ckeditor" rows="10" name="Icerik">@Model.Icerik</textarea>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Yazı Resmi</label>
+                            <div class="col-md-6 col-xs-12">
+                                <input type="file" class="fileinput btn-primary" name="KucukResimYolu" id="filename" value="@Model.KucukResimYolu" title="Resim Seç" />
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-default">Temizle</button>
+                        <button class="btn btn-primary pull-right">Kaydet</button>
+                    </div>
+                </div>
+            </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+<!-- RENDER -->
+<script src="~/Content/Content/ckeditor/ckeditor.js"></script>

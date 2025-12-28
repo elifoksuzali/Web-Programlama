@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var anasayfa = (IEnumerable<Temkin.Models.AnasayfaDetay>)ViewBag.Ansayfa;
+
+}
+
+<!-- about -->
+<div id="about" class="about">
+    <div class="container">
+        <div class="row">
+
+           @*@await Html.PartialAsync("~/Views/Anasayfa/SayfaDetay.cshtml",anasayfa)*@
+        </div>
+    </div>
+</div>
+<!-- end about -->

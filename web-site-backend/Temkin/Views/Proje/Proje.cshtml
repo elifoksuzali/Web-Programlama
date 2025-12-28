@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Temkin.Models.ProjeDetay>
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div id="proje" class="proje">
+        <div class="container">
+        
+            <div class="row">
+                
+                @foreach (var k in Model)
+                {
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <div class="proje-box">
+                            <i><img src="@k.ProjeResimYolu" alt="#" /></i>
+                            <h3>@k.Baslik</h3>
+                            <p>
+                                @k.ProjeIcerik
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+            
+            </div>
+    </div>
+    <Br>
+    <br>
+    <Br>
+    
+    <!-- end why -->
+    <!-- end proje -->

@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<Blog.Models.Yazilar>
+    <!--Son Yazilar Listesi Listesi -->
+
+
+@if (Model != null) {
+@foreach (var item in Model.Take(3))
+{
+    <div class="post mt-3">
+        <a class="yaziBaslik" href="/Yazilar/YazilarDetay/@item.Id"><h5 class="display-5">@item.Baslik</h5></a>
+        <p>
+            <span class="badge bg-primary text-white">@item.Kategori.KategoriAdi</span>
+            <span class="badge bg-danger text-white">@item.EklemeTarihi.ToString("dd MMMM yyyy")</span>
+        </p>
+        <p>
+            @item.KisaMetin
+        </p>
+        <a class="yaziBaslik text-white" href="/Yazilar/YazilarDetay/@item.Id">
+            <div class="btn btn-success devami">Devamı</div>
+        </a>
+        <hr>
+    </div>
+}
+}
+
+
+<!--<div class="post mt-3">
+    <h5 class="display-5">For Döngüsü</h5>
+    <p>
+        <span class="badge bg-primary text-white">C#</span>
+        <span class="badge bg-danger text-white">25.03.2021</span>
+    </p>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <div class="btn btn-success devami">Devamı</div>
+    <hr>
+</div>
+<div class="post mt-3">
+    <h5 class="display-5">If Yapısı</h5>
+    <p>
+        <span class="badge bg-primary text-white">C#</span>
+        <span class="badge bg-danger text-white">25.03.2021</span>
+    </p>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <div class="btn btn-success devami">Devamı</div>
+    <hr>
+</div>  -->

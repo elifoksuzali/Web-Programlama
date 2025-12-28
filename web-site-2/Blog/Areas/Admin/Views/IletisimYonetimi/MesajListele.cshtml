@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Blog.Models.Mesaj>
+<!-- RENDER -->
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DATATABLE EXPORT -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Mesaj Listesi / <a style="color:red;" href="/Admin/Giris/GenelAyarlar">Anasayfa</a></h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>İsim</th>
+                                <th>E-Mail</th>
+                                <th>Telefon</th>
+                                <th>Konu</th>
+                                <th>Icerik</th>
+                                <th>Geliş Tarihi</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    @if (item.Icerik != null)
+                                    {
+                                        <td>@item.Id</td>
+                                        <td>@item.Isim</td>
+                                        <td>@item.EMail</td>
+                                        <td>@item.Telefon</td>
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                    }
+                                    <td>@item.Konu</td>
+                                    <td>@item.Icerik</td>
+                                    <td>@item.EklemeTarihi</td>
+
+
+                                </tr>
+
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- RENDER -->

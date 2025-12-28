@@ -1,0 +1,149 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<Blog.Models.UstMenu>
+
+
+
+
+
+
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item active"><a class="nav-link" asp-controller="Anasayfa" asp-action="Anasayfa">Anasayfa</a></li>
+
+    @{
+        var i = 0;
+        foreach (var item in Model)
+        {
+
+        <li id="@i" class="nav-item">
+            @if (item.ParentId == null && Model.Where(a => a.ParentId == item.Id).FirstOrDefault() != null)
+            {
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@item.Adi</a>
+
+            }
+            else if (item.ParentId == null && Model.Where(a => a.ParentId != item.Id).FirstOrDefault() != null)
+            {
+                var link = "";
+                if (!String.IsNullOrEmpty(item.Link)) { link = item.Link; }
+                else { link = "/Anasayfa/SayfaDetay/" + item.Adi + "-" + item.Id; }
+                <a class="nav-link" href="@link">@item.Adi</a>
+            }
+
+
+            @if (item.ParentId == null && Model.Where(a => a.ParentId == item.Id).Any())
+            {
+                if (item.ParentId == null && Model.Where(a => a.ParentId == item.Id).FirstOrDefault() != null)
+                {
+                    <script type="text/javascript">
+                        document.getElementById('@i').className = "nav-item dropdown";
+                    </script>
+                    <ul class="dropdown-menu menu " aria-labelledby="navbarDropdown">
+                        @foreach (var item1 in Model.Where(a => item.Id == a.ParentId).OrderBy(x => x.Sira))
+                        {
+                            var link = "";
+                            if (item1.Link != null && item1.Link != "") { link = item1.Link; }
+                            else { link = "/Anasayfa/SayfaDetay/" + item1.Adi + "-" + item1.Id; }
+
+                            if (item1.YeniSayfadaAc == false)
+                            {
+                                <li><a class="dropdown-item menu nav-link" href="@link">@item1.Adi</a></li>
+                            }
+                            
+                        }
+
+
+
+
+                    </ul>
+                }
+                else
+                {
+                    <script type="text/javascript">
+                        document.getElementById('test').className = "nav-item dropdown";
+                    </script>
+
+                }
+            }
+        </li>
+            i++;
+        }
+
+
+        }
+
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<ul class="navbar-nav ml-auto">
+    @{
+        @foreach (var item in Model)
+        {
+            <li class="nav-item">
+                @if (item.ParentId == null && Model.Where(a => a.ParentId == item.Id).Any())
+                {
+                    <a class="nav-link" href="/SayfaDetay/@item.Adi-@item.Id">@item.Adi</a>
+                }
+                else if (item.ParentId == null && Model.Where(a => a.ParentId != item.Id).Any())
+                {
+                    var link = "";
+                    // if (item.Link != null && item.Link != "")
+                    if (!String.IsNullOrEmpty(item.Link))
+                    {
+                        link = item.Link;
+                    }
+                    else
+                    {
+                        link = "/SayfaDetay/" + item.Adi + "-" + item.Id;
+                    }
+                    <a class="nav-link" href="@link">@item.Adi</a>
+                }
+                <ul>
+                   
+                    @foreach (var item1 in Model.Where(a => a.ParentId == item.Id))
+                    {
+                        <li><a class="dropdown-item menu nav-link" href="/SayfaDetay/@item1.Adi-@item1.Id">@item1.Adi</a></li>
+                    }
+                </ul>
+            </li>
+
+        }
+    }
+</ul>*@
+
+
+
+
+
+@*<li class="nav-item">
+        <a class="nav-link" href="#">Hakkımda</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Bilişim Teknolojileri ve Yazılım
+        </a>
+        <ul class="dropdown-menu menu " aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item menu nav-link" href="#">5.Sınıflar</a></li>
+            <li><a class="dropdown-item menu nav-link" href="#">6.Sınıflar</a></li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Programlama</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">İletişim</a>
+    </li>*@

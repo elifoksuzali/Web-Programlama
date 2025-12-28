@@ -1,0 +1,110 @@
+﻿@{ 
+    var Menüler = (IEnumerable<Blog.Models.UstMenu>)ViewBag.Menüler;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SELÇUK YILMAZ OFFİCİAL WEBSİTE BLOG</title>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <!--Üst Menü ve Logo-->
+            <div class="col-md-10 mx-auto p-0">
+                <nav class="navbar navbar-expand-lg menu">
+                    <a class="navbar-brand text-white" asp-controller="Anasayfa" asp-action="Anasayfa">SELÇUK YILMAZ</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!--Üst Menü -->
+                        @*@await Html.PartialAsync("~/Views/Anasayfa/UstMenu.cshtml", Menüler)*@
+                        @await Component.InvokeAsync("UstMenuComponent")
+                    </div><!--/Üst Menü -->
+                </nav>
+            </div>
+        </div>
+    </div>   <!--/Üst Menü ve Logo -->
+    
+    <div class="container">
+        <!--Header Görsel -->
+        <div class="row">            
+            <div class="col-md-10 mx-auto p-0 header_Gorsel" style="background-image: url('/Content/img/home-bg.jpg')">
+                <div class="gorsel_Golge"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-10 mx-auto">
+                            <div class="site_Baslik">
+                                <h1>SELÇUK YILMAZ</h1>
+                                <span class="site_AltBaslik">BİR BİLİŞİMCİNİN YOL HARİTASI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   <!--/Header Görsel -->
+    <div class="container">
+        <!--Header Alt Bar -->
+        <div class="row">
+            <div class="col-md-10 mx-auto header_alt">
+
+            </div>
+        </div>
+    </div>    <!--/Header Alt Bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto p-0 bg-white">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!--Footer -->
+        <div class="row">
+            <div class="col-md-10 mx-auto footer d-flex justify-content-center align-items-center">
+                <div class="sosyalmedya_ıcon">
+                    <!-- Footer Sosyal Medaya İcon -->
+                    <div class="facebook"></div>
+                    <div class="twitter"></div>
+                    <div class="instagram"></div>
+                    <div class="google-plus"></div>
+                </div>
+                <p class="footer_text">Her hakkı saklıdır.&copy; Selçuk YILMAZ</p>
+            </div>
+        </div>
+
+    </div>   <!--/Footer -->
+
+
+
+
+
+    <script src="~/Content/js/jquery-3.6.0.min.js"></script>
+    <script src="~/Content/js/bootstrap.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

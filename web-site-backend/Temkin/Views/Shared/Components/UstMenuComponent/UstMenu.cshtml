@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<Temkin.Models.UstMenu>
+
+
+<ul class="nav-menu">
+    @foreach (var item in Model)
+    {
+        <li>
+            @if (item.ParentId == null && Model.Where(a => a.ParentId == item.Id).Any())
+            {
+                <a href="/Anasayfa/SayfaDetay/@item.Adi - @item.Id">@item.Adi</a>
+            }
+            else if (item.ParentId == null && Model.Where(a => a.ParentId != item.Id).Any())
+            {
+                var link = "";
+                if (!String.IsNullOrEmpty(item.Link))
+                {
+                    link = item.Link;
+                }
+                else
+                {
+                    link = "/Anasayfa/SayfaDetay/" + item.Adi + "-"
+                     + item.Id;
+                }
+                <a href="@link"> @item.Adi</a>
+            }
+            <!---alt linkelrim olduğu zaman kullanılacak kısımdır-->
+            <ul>
+                @foreach (var items in Model.Where(a => a.ParentId == item.Id))
+                {
+                    <li><a href="/Anasayfa/SayfaDetay/@items.Adi - @items.Id">@items.Adi</a></li>
+                }
+            </ul>
+        </li>
+
+    }
+</ul>
+

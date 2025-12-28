@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Blog.Models.Kategoriler>
+    <!--Kategoriler -->
+<ul class="list-group mt-3">
+    <li class="list-group-item active" aria-current="true">Kategoriler</li>
+
+    @foreach (var item in Model)
+    {
+       
+
+        <li class="list-group-item">
+            <a class="yaziBaslik" href="/Anasayfa/KategoriMakale/@item.Id">@item.KategoriAdi</a>
+
+        </li>
+
+    }
+
+
+
+    @*<li class="list-group-item">C#</li>
+        <li class="list-group-item">Java</li>
+        <li class="list-group-item">Python</li>
+        <li class="list-group-item">Bootstrap</li>*@
+</ul>
+<!--/Kategoriler -->
+

@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var sonYazilar = (IEnumerable<Blog.Models.Yazilar>)ViewBag.SonYazilar;
+    var kategoriler = (IEnumerable<Blog.Models.Kategoriler>)ViewBag.Kategoriler;
+
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12  p-0 bg-white">
+            <!--Blog Listesi Kategoriler ve Son Eklenenler -->
+            <div class="row">
+                <div class="col-md-9">
+                    <!--Post Listesi -->
+                    @await Html.PartialAsync("~/Views/Yazilar/SonYazilar.cshtml", sonYazilar)
+                    <!--Post Gelecek -->
+                </div> <!--Post Listesi -->
+                <div class="col-md-3 order-first order-md-last oerder-lg-last sag_Menu">
+                    <!--Sag Menü -->
+                    <div class="input-group mt-3">
+                        <!--Arama Buttonu ve Kutuçuğu -->
+                        <button type="button" class="btn btn-primary mr-1">Ara</button>
+                        <input type="text" class="form-control" placeholder="Ara" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+                    <div>
+                        @await Html.PartialAsync("~/Views/Kategoriler/Kategoriler.cshtml", kategoriler)
+                        <!--Kategoriler Gelecek -->
+                    </div>
+                    <div>
+                        @await Html.PartialAsync("~/Views/Duyurular/Duyurular.cshtml")
+                        <!--Son Eklenen Gelecek -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

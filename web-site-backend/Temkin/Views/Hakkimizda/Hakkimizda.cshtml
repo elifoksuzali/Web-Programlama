@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Temkin.Models.HakkimizdaDetay>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- about -->
+@foreach (var k in Model)
+{
+    <div id="about_hak" class="about_hak">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-6 col-lg-6 col-md-6 co-sm-6">
+                    <div class="about_box_hak">
+                        <h2>
+                            @k.Baslik<br>
+                        <strong class="yellow">@k.Baslik2</strong>
+                    </h2>
+                    <p>
+                        @k.HakkimizdaIcerik
+                </p>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 co-sm-6">
+            <div class="about_hak_img">
+                <figure><img src="@k.HakkimizdaResimYolu" alt="img" /></figure>
+            </div>
+        </div>
+    </div>
+    <div class="row stats-row">
+        <div class="stats-col text-center col-md-3 col-sm-6">
+            <div class="count">
+                <span class="stats-no" data-toggle="counter-up">@k.OgrenciSayisi</span> Öğrenci Sayısı
+            </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+            <div class="count">
+                <span class="stats-no" data-toggle="counter-up">@k.YayimSayisi</span> Yayınlanan Dergiler
+            </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+            <div class="count">
+                <span class="stats-no" data-toggle="counter-up">@k.DilSayisi</span> Dil Kategori
+            </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+            <div class="count">
+                <span class="stats-no" data-toggle="counter-up">@k.AkademisyenSayisi</span> Akademisyen Sayısı
+            </div>
+        </div>
+    </div>
+    <br><br>
+</div>
+</div>
+}
+<script src="~/Content/js/conter.js"></script>
+
+<!-- /About -->

@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Blog.Models.Kategoriler>
+<!-- RENDER -->
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DATATABLE EXPORT -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Kategori</strong> Listesi / <a style="color:red;" href="/Admin/KategoriYonetimi/KategoriEkle">Yeni Kategori Ekle</a></h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Kategori Adı</th>
+                                <th>Açıklama</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    @if (item.KategoriAdi != null)
+                                    {
+                                        <td>@item.Id</td>
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                    }
+                                    <td>@item.KategoriAdi</td>
+                                    <td>@item.Aciklama</td>
+                                    <td>
+                                        @Html.ActionLink("Düzenle", "KategoriGetir", new { id = item.Id }, new { @class = "btn btn-info btn-sm" })
+                                        @Html.ActionLink("Sil", "KategoriSil", new { id = item.Id }, new { @class = "btn btn-info btn-sm", onclick = "return confirm('Gerçekten Silmek istiyor musunuz?')" })
+                                       
+                                    
+
+
+                                    </td>
+                                </tr>
+
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- RENDER -->

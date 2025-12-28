@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Temkin.Models.Iletisim>
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="section-title">İletişim Bilgileri</h2>
+            </div>
+        </div>
+        @foreach (var k in Model)
+        {
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-4">
+                    <div class="info">
+                        <div>
+                            <i class="fa fa-map-marker"></i>
+                            <p>@k.Adres</p>
+                        </div>
+
+                        <div>
+                            <i class="fa fa-envelope"></i>
+                            <p>@k.Email</p>
+                        </div>
+
+                        <div>
+                            <i class="fa fa-phone"></i>
+                            <a href="tel://+905532559761">@k.Telefon</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <iframe src="@k.Konum" width="855" height="350" style="border:1px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        }
+    </div>
+</section>

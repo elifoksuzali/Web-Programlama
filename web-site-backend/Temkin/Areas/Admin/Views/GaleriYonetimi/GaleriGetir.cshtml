@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model Temkin.Models.Galeriler
+
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/bootstrap/bootstrap-file-input.js"></script>
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/summernote/summernote.js"></script>
+
+
+<!-- RENDER -->
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("ResimDuzenle", "GaleriYonetimi", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-horizontal">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Kategori</strong> Düzenle / <a style="color:red;" href="/Admin/KategoriYonetimi/KategoriListele">Geri</a></h3>
+                            <ul class="panel-controls">
+                                <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="panel-body">
+                            @Html.HiddenFor(Model => Model.Id);
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Galeri  Adı</label>
+                                <div class="col-md-6 col-md-2">
+                                    <input type="text" class="form-control" name="GaleriAdi" value="@Model.GaleriAdi">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Ekleyen Kişi</label>
+                                <div class="col-md-6 col-md-2">
+                                    <input type="text" class="form-control" name="EkleyenKisiID" value="@Model.EkleyenKisiID">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Açıklama</label>
+                                <div class="col-md-6 col-md-2">
+                                    <input type="text" class="form-control" name="Aciklama" value="@Model.Aciklama">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Ekleme Tarihi</label>
+                                <div class="col-md-6 col-md-2">
+                                    <input type="text" class="form-control" name="EklemeTarihi" value="@Model.EklemeTarihi">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-default">Temizle</button>
+                            <button class="btn btn-primary pull-right">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+<!-- RENDER -->

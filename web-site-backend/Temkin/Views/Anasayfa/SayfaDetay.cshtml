@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "SayfaDetay";
+    var birustsayfaBaslik = ViewBag.UstSayfa;
+    var sayfaBaslik = ViewBag.Sayfa;
+    var icerik = ViewBag.Icerik;
+}
+
+
+
+            <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                <div class="about_box">
+                    <h2>
+                        @if (sayfaBaslik != null)
+                        {@sayfaBaslik}
+                    else { }<br><strong class="black">
+    @if (sayfaBaslik != null)
+    {@sayfaBaslik}
+else { }
+                </strong>
+                    </h2>
+                    <p>
+                        @if (icerik != null)
+                        {
+                            @Html.Raw(icerik.Icerik)
+                        }
+                                    </p>
+                    <a href="/Hakkimizda/Hakkimizda/#about_hak">Devamı</a>
+                </div>
+            </div>
+
+            <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                <div class="about_img">
+
+                    @if (icerik != null)
+                    {
+                        <figure> <img src="@icerik.KucukResimYolu" /></figure>
+                    }
+
+                    </div>
+            </div>
+
+            <div class="container-fluid video-player">
+                <div class="container">
+                    <div class="screen embed-responsive embed-responsive-16by9">
+                        @if (icerik != null)
+                        {
+                            <iframe id="screen" src="@icerik.AnaSayfaVideoYolu" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        }
+
+                        </div>
+                </div>
+            </div>
+
+        
+    
+
