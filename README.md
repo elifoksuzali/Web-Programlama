@@ -92,16 +92,3 @@ Aynı sayfanın iki farklı yöntemle (saf CSS ve Bootstrap) tasarlanmış hâli
 `web-site-design/index.html` veya `odev1-css-bootstrap/*.html` dosyalarını doğrudan tarayıcıda açın.
 
 ---
-
-## 🔒 Güvenlik ve Düzenleme Notları
-
-- **Derleme çıktıları temizlendi:** `bin/`, `obj/`, `.vs/`, `*.dll`, `*.exe`, `*.pdb` ve
-  `*.user` dosyaları depodan çıkarıldı ve `.gitignore` ile hariç tutuldu. (Bunlar hem
-  gereksiz hem de makineye özel mutlak yol/isim bilgisi içeriyordu.)
-- **Veritabanı dump'larındaki hassas bilgiler maskelendi:** `.sql` dosyalarında düz metin
-  olarak tutulan **yönetici parolaları**, **kişisel e-posta adresleri** ve **telefon
-  numaraları** örnek/sahte değerlerle değiştirildi. Gerçek kullanıma geçmeden önce:
-  - Yönetici parolalarını **hash'leyerek** saklayın (düz metin **kullanmayın**).
-  - Gerçek bağlantı bilgilerini koda gömmek yerine ortam değişkeni / `appsettings` kullanın.
-- `connection string`'lerdeki makine adları, taşınabilirlik için `.\SQLEXPRESS` ile değiştirildi;
-  kendi SQL Server örnek adınızı yazın.
