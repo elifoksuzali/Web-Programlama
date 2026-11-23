@@ -1,0 +1,36 @@
+# ---- .NET / Visual Studio ----
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# Build sonuçları
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+publish/
+*.publishsettings
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# ---- Node (frontend bağımlılıkları) ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ---- Veritabanı / yerel ----
+*.mdf
+*.ldf
+
+# ---- İşletim sistemi ----
+.DS_Store
+Thumbs.db

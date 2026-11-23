@@ -62,7 +62,7 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[Genel_Ayarlar] ON
 GO
-INSERT INTO [dbo].[Genel_Ayarlar] ([Id], [EkleyenKisiID], [SiteAdi], [MetaAuthor], [MetaKeyWords], [Facebook], [Twitter], [GooglePlus], [Instagram], [Tel], [EMail], [EklemeTarihi], [WebAdres], [Adres]) VALUES (N'1', N'1006', N'SELÇUK YILMAZ OFFİCİAL WEBSİTE BLOG', N'aaa', N'cc', N'https://www.facebook.com/', N'https://twitter.com/', N'https://google.com/', N'https://www.instagram.com/', N'05436589877', N'aaa@gmail.com', N'2021-06-07 20:20:56.787', N'www.yilmazselcuk55.com.tr', N'SAMSUN55');
+INSERT INTO [dbo].[Genel_Ayarlar] ([Id], [EkleyenKisiID], [SiteAdi], [MetaAuthor], [MetaKeyWords], [Facebook], [Twitter], [GooglePlus], [Instagram], [Tel], [EMail], [EklemeTarihi], [WebAdres], [Adres]) VALUES (N'1', N'1006', N'SELÇUK YILMAZ OFFİCİAL WEBSİTE BLOG', N'aaa', N'cc', N'https://www.facebook.com/', N'https://twitter.com/', N'https://google.com/', N'https://www.instagram.com/', N'05XXXXXXXXX', N'aaa@gmail.com', N'2021-06-07 20:20:56.787', N'www.yilmazselcuk55.com.tr', N'SAMSUN55');
 GO
 SET IDENTITY_INSERT [dbo].[Genel_Ayarlar] OFF
 GO
@@ -330,7 +330,7 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[Kullanicilar] ON
 GO
-INSERT INTO [dbo].[Kullanicilar] ([Id], [Ad], [Soyad], [Parola], [Email], [KucukResimYolu], [EklemeTarihi], [Rol]) VALUES (N'1006', N'Selçuk', N'YILMAZ', N'1234', N'yilmazselcuk55@erzurum.edu.tr', N'', N'2020-04-05 17:49:37.000', N'1');
+INSERT INTO [dbo].[Kullanicilar] ([Id], [Ad], [Soyad], [Parola], [Email], [KucukResimYolu], [EklemeTarihi], [Rol]) VALUES (N'1006', N'Selçuk', N'YILMAZ', N'GECERSIZ_PAROLA_DEGISTIRIN', N'admin@example.com', N'', N'2020-04-05 17:49:37.000', N'1');
 GO
 SET IDENTITY_INSERT [dbo].[Kullanicilar] OFF
 GO

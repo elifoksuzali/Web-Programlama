@@ -269,7 +269,7 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[Genel_Ayarlar] ON
 GO
-INSERT INTO [dbo].[Genel_Ayarlar] ([Id], [EkleyenKisiID], [EklemeTarihi], [SiteAdi], [MetaAuthor], [MetaKeyWords], [Facebook], [Twitter], [Instagram], [Linkedln], [Youtube], [Tel], [Email], [WebAdres], [DuzenleyenKisiID], [DuzenlemeTarihi], [Adres]) VALUES (N'1', N'1016', N'2021-05-30 10:51:28.000', N'Temkin-Trabzon Etkin Muasır Kur''an ve İlim Merkezi', N'TEMKİN', N'Temkin-Trabzon', N'https://mail.google.com/mail/u/3/#inbox', N'https://twitter.com/flyengineergirl', N'https://www.instagram.com/erzurumteknikuni/', N'https://www.linkedin.com/in/elif-%C3%B6ks%C3%BCzali-602320196/', N'#', N'0553 255 97 61', N'elif.oksuzali39@erzurum.edu.tr', N'#', N'1016', N'2021-05-30 20:34:34.000', N'Yomra /TRABZON');
+INSERT INTO [dbo].[Genel_Ayarlar] ([Id], [EkleyenKisiID], [EklemeTarihi], [SiteAdi], [MetaAuthor], [MetaKeyWords], [Facebook], [Twitter], [Instagram], [Linkedln], [Youtube], [Tel], [Email], [WebAdres], [DuzenleyenKisiID], [DuzenlemeTarihi], [Adres]) VALUES (N'1', N'1016', N'2021-05-30 10:51:28.000', N'Temkin-Trabzon Etkin Muasır Kur''an ve İlim Merkezi', N'TEMKİN', N'Temkin-Trabzon', N'https://mail.google.com/mail/u/3/#inbox', N'https://twitter.com/flyengineergirl', N'https://www.instagram.com/erzurumteknikuni/', N'https://www.linkedin.com/in/elif-%C3%B6ks%C3%BCzali-602320196/', N'#', N'05XX XXX XX XX', N'info@example.com', N'#', N'1016', N'2021-05-30 20:34:34.000', N'Yomra /TRABZON');
 GO
 SET IDENTITY_INSERT [dbo].[Genel_Ayarlar] OFF
 GO
@@ -358,7 +358,7 @@ GO
 -- ----------------------------
 -- Records of Iletisim
 -- ----------------------------
-INSERT INTO [dbo].[Iletisim] ([Id], [Konum], [Telefon], [Email], [Adres]) VALUES (N'1', N'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.122996113387!2d40.050541215411855!3d40.9349714793082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40642d70cf5749e1%3A0x14dd78bd68d36e5a!2sMerkez%2C%20Eski%20S%C3%BCrmene%20Cd.%20No%3A91%2C%2061700%20Arakl%C4%B1%2FTrabzon!5e0!3m2!1str!2str!4v1621724815538!5m2!1str!2str', N'05532559761', N'temkin@temkin.org.tr', N'Yomra-Merkez/Trabzon');
+INSERT INTO [dbo].[Iletisim] ([Id], [Konum], [Telefon], [Email], [Adres]) VALUES (N'1', N'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.122996113387!2d40.050541215411855!3d40.9349714793082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40642d70cf5749e1%3A0x14dd78bd68d36e5a!2sMerkez%2C%20Eski%20S%C3%BCrmene%20Cd.%20No%3A91%2C%2061700%20Arakl%C4%B1%2FTrabzon!5e0!3m2!1str!2str!4v1621724815538!5m2!1str!2str', N'05XXXXXXXXX', N'temkin@temkin.org.tr', N'Yomra-Merkez/Trabzon');
 GO
 
 -- ----------------------------
@@ -432,9 +432,9 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[Kullanicilar] ON
 GO
-INSERT INTO [dbo].[Kullanicilar] ([Id], [Ad], [Soyad], [Kurum], [Parola], [Email], [KucukResimYolu], [EklemeTarihi], [Rol]) VALUES (N'1006', N'Prof. Dr. Muhammed ', N'Reyyan', N'Trabzon Temkin Derneği', N'123456', N'elif.oksuzali39@erzurum.edu.tr', N'/Uploads/KullaniciResimleri/irfankaymaz.png', N'2021-05-30 17:49:37.000', N'1');
+INSERT INTO [dbo].[Kullanicilar] ([Id], [Ad], [Soyad], [Kurum], [Parola], [Email], [KucukResimYolu], [EklemeTarihi], [Rol]) VALUES (N'1006', N'Prof. Dr. Muhammed ', N'Reyyan', N'Trabzon Temkin Derneği', N'GECERSIZ_PAROLA_DEGISTIRIN', N'admin@example.com', N'/Uploads/KullaniciResimleri/irfankaymaz.png', N'2021-05-30 17:49:37.000', N'1');
 GO
-INSERT INTO [dbo].[Kullanicilar] ([Id], [Ad], [Soyad], [Kurum], [Parola], [Email], [KucukResimYolu], [EklemeTarihi], [Rol]) VALUES (N'1016', N'Elif ', N'Öksüzali', N'Trabzon Temkin Derneği', N'123456', N'elif.oksuzali39@erzurum.edu.tr', N'/Uploads/KullaniciResimleri/emrecnts.JPG', N'2021-05-30 17:49:37.000', N'1');
+INSERT INTO [dbo].[Kullanicilar] ([Id], [Ad], [Soyad], [Kurum], [Parola], [Email], [KucukResimYolu], [EklemeTarihi], [Rol]) VALUES (N'1016', N'Elif ', N'Öksüzali', N'Trabzon Temkin Derneği', N'GECERSIZ_PAROLA_DEGISTIRIN', N'admin@example.com', N'/Uploads/KullaniciResimleri/emrecnts.JPG', N'2021-05-30 17:49:37.000', N'1');
 GO
 SET IDENTITY_INSERT [dbo].[Kullanicilar] OFF
 GO
